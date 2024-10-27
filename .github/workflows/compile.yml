@@ -114,10 +114,10 @@ jobs:
         cd openwrt
         source ${BUILD_PATH}/common.sh && Diy_menu3
  
-    #- name: 加载自定义设置
-      #run: |
-        #cd openwrt
-        #source ${BUILD_PATH}/common.sh && Diy_menu4
+    - name: 加载自定义设置
+      run: |
+        cd openwrt
+        source ${BUILD_PATH}/common.sh && Diy_menu4
         
     - name: 安装插件源
       run: |
