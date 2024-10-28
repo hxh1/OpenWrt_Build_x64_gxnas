@@ -81,7 +81,7 @@ on:
 
 # 定时触发开启开始编译(把下面两个#去掉开启,时间设置请看定时开启编译说明)
   schedule:
-   - cron: 0 0 0/24 1/1 * ? 
+   - cron: 0 1 * * *
 
 env:
   GITHUB_LINK: https://github.com/${{github.repository}}
@@ -202,7 +202,11 @@ jobs:
         #name: .config_${{ env.SOURCE }}_${{ env.LUCI_EDITION }}_${{ env.TARGET_PROFILE }}_${{ env.Firmware_Date }}
         name: OpenWrt_${{ github.event.inputs.CONFIG_FILE }}-${{ env.Firmware_Date }}.config
         path: openwrt/build_logo/config.txt
-        
+
+
+    - name: OpenWrt Image information
+          -Default IP:192.168.8.8
+      
     - name: 编译信息
       continue-on-error: true
       if: env.COMPILATION_INFORMATION == 'true'
