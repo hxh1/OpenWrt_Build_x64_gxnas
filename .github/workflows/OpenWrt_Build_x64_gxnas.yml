@@ -202,11 +202,7 @@ jobs:
         #name: .config_${{ env.SOURCE }}_${{ env.LUCI_EDITION }}_${{ env.TARGET_PROFILE }}_${{ env.Firmware_Date }}
         name: OpenWrt_${{ github.event.inputs.CONFIG_FILE }}-${{ env.Firmware_Date }}.config
         path: openwrt/build_logo/config.txt
-
-
-    - name: OpenWrt Image information
-          Default IP:192.168.8.8
-      
+     
     - name: 编译信息
       continue-on-error: true
       if: env.COMPILATION_INFORMATION == 'true'
