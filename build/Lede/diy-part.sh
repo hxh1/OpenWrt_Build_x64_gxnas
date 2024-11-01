@@ -16,6 +16,22 @@
 # sed -i '9a\msgstr "固件出处"' feeds/luci/modules/luci-base/po/zh-cn/base.po
 # sed -i '10a \\' feeds/luci/modules/luci-base/po/zh-cn/base.po
 
+sed -i 's/192.168.1.1/10.0.8.10/g' package/base-files/luci2/bin/config_generate
+
+
+#替换argon主题
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/luci/applications/luci-app-argon-config
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git feeds/luci/themes/luci-theme-argon
+git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git feeds/luci/applications/luci-app-argon-config
+#git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci-theme-argon
+#git clone https://github.com/jerrykuku/luci-app-argon-config.git package/luci-app-argon-config
+#rm -rf feeds/luci/themes/luci-theme-design
+#git clone https://github.com/gngpp/luci-theme-design.git feeds/luci/themes/luci-theme-design
+#rm -rf feeds/luci/applications/luci-app-design-config
+#git clone https://github.com/gngpp/luci-app-design-config.git feeds/luci/applications/luci-app-design-config
+
+
 # 后台IP设置
 export Ipv4_ipaddr="192.168.8.8"            # 修改openwrt后台地址(填0为关闭)
 export Netmask_netm="255.255.255.0"          # IPv4 子网掩码（默认：255.255.255.0）(填0为不作修改)
