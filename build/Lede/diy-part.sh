@@ -18,8 +18,8 @@
 
 sed -i 's/192.168.1.1/192.168.8.10/g' package/base-files/luci2/bin/config_generate
 
-rm -rf luci-theme-argon
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
+#rm -rf luci-theme-argon
+#git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git luci-theme-argon
 
 #替换argon主题
 #rm -rf feeds/luci/themes/luci-theme-argon
